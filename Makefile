@@ -40,21 +40,22 @@ RANLIB_COMMAND=true
 endif
 
 BOOST_TARGET_LIBS = \
-				   $(BUILD_DIR)/boost/stage/lib/libboost_python.a \
 				   $(BUILD_DIR)/boost/stage/lib/libboost_thread$(W32).a \
 				   $(BUILD_DIR)/boost/stage/lib/libboost_system.a \
 				   $(BUILD_DIR)/boost/stage/lib/libboost_filesystem.a \
 				   $(BUILD_DIR)/boost/stage/lib/libboost_date_time.a
 
+#				   $(BUILD_DIR)/boost/stage/lib/libboost_python.a \
+
 BOOST_SYSROOT_LIBS = \
-				   $(SYSROOT_DIR)/lib/libboost_python.a \
 				   $(SYSROOT_DIR)/lib/libboost_thread$(W32).a \
 				   $(SYSROOT_DIR)/lib/libboost_system.a \
 				   $(SYSROOT_DIR)/lib/libboost_filesystem.a \
 				   $(SYSROOT_DIR)/lib/libboost_date_time.a
 
+#				   $(SYSROOT_DIR)/lib/libboost_python.a \
+
 FEATURE_FLAGS= \
-			   --with-python \
 			   --with-date_time \
 			   --with-filesystem \
 			   --with-iostreams \
@@ -63,6 +64,8 @@ FEATURE_FLAGS= \
 			   --with-signals \
 			   --with-system \
 			   --with-thread
+
+#			   --with-python \
 
 BUILD_FLAGS=$(CROSS_COMPILE_ARGS) -d2 --layout=system $(BUILD_VARIANTS) $(BUILD_DIR_FLAGS) $(PREFIX_FLAGS) $(FEATURE_FLAGS)
 
